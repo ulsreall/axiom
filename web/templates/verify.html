@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Verify{% endblock %}
+{% block content %}
+<div class="page-header"><h1>✓ Verify Code</h1></div>
+<form method="POST" class="card">
+    <div class="form-group">
+        <label>Filename</label>
+        <input type="text" name="filename" value="untitled.py" class="input">
+    </div>
+    <div class="form-group">
+        <label>Code</label>
+        <textarea name="code" class="code-editor" rows="20" placeholder="Paste your code for formal verification..."></textarea>
+    </div>
+    <div class="form-group">
+        <label>Select Verification Agents</label>
+        <div class="checkbox-grid">
+            <label class="checkbox-label"><input type="checkbox" name="agents" value="assertion" checked> Assertion Checker</label>
+            <label class="checkbox-label"><input type="checkbox" name="agents" value="logic" checked> Logic Analyzer</label>
+            <label class="checkbox-label"><input type="checkbox" name="agents" value="invariant" checked> Invariant Detector</label>
+            <label class="checkbox-label"><input type="checkbox" name="agents" value="proof" checked> Proof Generator</label>
+            <label class="checkbox-label"><input type="checkbox" name="agents" value="boundary" checked> Boundary Analyzer</label>
+            <label class="checkbox-label"><input type="checkbox" name="agents" value="concurrency" checked> Concurrency Verifier</label>
+            <label class="checkbox-label"><input type="checkbox" name="agents" value="spec" checked> Specification Validator</label>
+            <label class="checkbox-label"><input type="checkbox" name="agents" value="termination" checked> Termination Prover</label>
+            <label class="checkbox-label"><input type="checkbox" name="agents" value="abstract" checked> Abstract Interpreter</label>
+            <label class="checkbox-label"><input type="checkbox" name="agents" value="report" checked> Verification Report</label>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">🔬 Run Verification</button>
+</form>
+{% endblock %}

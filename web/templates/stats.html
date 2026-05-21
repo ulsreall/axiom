@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Statistics{% endblock %}
+{% block content %}
+<div class="page-header"><h1>📈 Verification Statistics</h1></div>
+<div class="stats-grid">
+    <div class="stat-card"><div class="stat-label">Daily Average</div><div class="stat-value">82.4M</div></div>
+    <div class="stat-card"><div class="stat-label">Monthly Total</div><div class="stat-value">2.47B</div></div>
+    <div class="stat-card"><div class="stat-label">Cost/Day</div><div class="stat-value">$247.20</div></div>
+    <div class="stat-card"><div class="stat-label">Plan Required</div><div class="stat-value">1.6B/mo</div></div>
+</div>
+<div class="grid-2">
+    <div class="card"><h2>Daily Token Usage</h2><canvas id="dailyChart"></canvas></div>
+    <div class="card"><h2>Per-Agent Consumption</h2><canvas id="agentChart"></canvas></div>
+</div>
+<script>
+new Chart(document.getElementById('dailyChart'), {
+    type: 'bar', data: {
+        labels: Array.from({length:21}, (_,i) => `05-${String(i+1).padStart(2,"0")}`),
+        datasets: [{label: 'Tokens (M)', data: [78,82,85,79,88,91,84,76,83,87,90,85,79,86,82,88,75,81,84,87,83], backgroundColor: '#58a6ff'}]
+    }
+});
+new Chart(document.getElementById('agentChart'), {
+    type: 'doughnut', data: {
+        labels: ['Proof Generator','Logic Analyzer','Concurrency','Assertion','Abstract','Invariant','Spec Validator','Boundary','Termination','Report'],
+        datasets: [{data: [15,12.1,11,10,9,8.1,7.2,6.4,5.6,4.9], backgroundColor: ['#58a6ff','#3fb950','#f85149','#d29922','#bc8cff','#f778ba','#79c0ff','#56d364','#ffa657','#d2a8ff']}]
+    }
+});
+</script>
+{% endblock %}

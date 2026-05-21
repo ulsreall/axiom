@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}AXIOM{% endblock %} — Formal Verification</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-brand"><span class="brand-icon">◆</span><span class="brand-text">AXIOM</span></div>
+        <nav class="sidebar-nav">
+            <a href="/" class="nav-item {% if request.path == '/' %}active{% endif %}">📊 Dashboard</a>
+            <a href="/verify" class="nav-item {% if request.path == '/verify' %}active{% endif %}">✓ Verify</a>
+            <a href="/agents" class="nav-item {% if request.path == '/agents' %}active{% endif %}">🤖 Agents</a>
+            <a href="/stats" class="nav-item {% if request.path == '/stats' %}active{% endif %}">📈 Statistics</a>
+        </nav>
+        <div class="sidebar-footer">AXIOM v1.0 | Formal Verification</div>
+    </aside>
+    <main class="content">{% block content %}{% endblock %}</main>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
