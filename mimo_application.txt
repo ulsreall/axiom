@@ -1,4 +1,4 @@
-AXIOM is a formal code verification platform deploying 10 specialized AI agents for proving code correctness and logical soundness at enterprise scale. Daily consumption: 82M+ tokens.
+AXIOM is a formal code verification platform with 10 AI agents for proving code correctness and logical soundness. Daily consumption: 82M+ tokens.
 
 Operations:
 - Proof Generator: 25K/scan, 600/day = 15.0M
@@ -12,8 +12,8 @@ Operations:
 - Termination Prover: 16K/scan, 350/day = 5.6M
 - Verification Report: 14K/scan, 350/day = 4.9M
 
-Architecture: 10 agents form a verification pipeline. Each codebase flows through assertion checking, logic analysis, invariant detection, proof generation, and boundary analysis consuming 191K+ tokens per full verification. Dashboard tracks proof confidence scores.
+Each codebase flows through assertion checking, logic analysis, invariant detection, proof generation, and boundary analysis consuming 191K+ tokens per verification. Dashboard tracks proof confidence.
 
-We serve 120+ safety-critical teams (fintech, aerospace, medical) processing 500+ codebases daily. Each verification requires deep logic analysis, concurrency proof, termination checking, and abstract interpretation. 500 daily pipeline runs × 165K avg = 82M+ tokens/day.
+We serve 120+ safety-critical teams (fintech, aerospace, medical) processing 500+ codebases daily. Each verification requires deep logic analysis, concurrency proof, and abstract interpretation. 500 daily runs × 165K avg = 82M+ tokens/day.
 
-Previously used GPT-4 but reasoning depth insufficient for formal proofs. MiMo v2.5 Pro's logical reasoning ideal for verification tasks. Need 1.6B tokens/month plan.
+Previously used GPT-4 but reasoning insufficient for formal proofs. MiMo v2.5 Pro ideal for verification. Need 1.6B tokens/month plan.
